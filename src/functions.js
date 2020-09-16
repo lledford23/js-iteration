@@ -23,8 +23,8 @@
  *
  */
 
-const yelling = words => {
-  // Your code here
+function yelling(words) {
+  return words.map(word => word.toUpperCase())
 }
 
 /**
@@ -37,6 +37,9 @@ const yelling = words => {
  *
  */
 
+function doubleTrouble(numbers) {
+  return numbers.map(number => number * 2)
+}
 // ...
 
 /*
@@ -47,7 +50,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function stringyIndexes(string) {
+  return string.map((string, index) => `${string} is at index ${index}`)
+}
 // ...
 
 /*
@@ -57,7 +62,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function onlyTheEvenSurvive(numbers) {
+  return numbers.filter(number => number % 2 === 0)
+}
 // ...
 
 /*
@@ -67,7 +74,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function onlyTheEvenIndexedSurvive(numbers) {
+  return numbers.filter((number, index) => index % 2 === 0)
+}
 // ...
 
 /*
@@ -86,7 +95,12 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function bestMoviesOfTheYear(movies, year) {
+  const movieNames = movies
+    .filter(movie => movie.score > 90 && movie.year === year)
+    .map(movie => movie.name)
+  return movieNames
+}
 // ...
 
 /*
@@ -97,7 +111,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function everyoneIsOdd(numbers) {
+  return numbers.every(number => number % 2 === 1)
+}
 // ...
 
 /*
@@ -108,7 +124,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function findTheNeedle(strings) {
+  return strings.find(string => string.includes('needle'))
+}
 // ...
 
 /*
@@ -119,7 +137,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function findTheNeedleIndex(strings) {
+  return strings.findIndex(string => string.includes('needle'))
+}
 // ...
 
 /*
@@ -130,7 +150,9 @@ const yelling = words => {
  * NOTE: You may *not* use the `forEach` or `for` method.
  *
  */
-
+function someoneToLove(strings) {
+  return strings.some(string => string.length === 4)
+}
 // ...
 
 /*
@@ -242,7 +264,7 @@ const tests = [
     }
   },
   {
-    methodName: 'stringyIndex',
+    methodName: 'stringyIndexes',
     test: () => {
       return compare(stringyIndexes(['how', 'now', 'brown', 'cow']), [
         'how is at index 0',
@@ -264,7 +286,7 @@ const tests = [
     }
   },
   {
-    methodName: 'onlyTheEvenIndexSurvive',
+    methodName: 'onlyTheEvenIndexedSurvive',
     test: () => {
       return compare(
         onlyTheEvenIndexedSurvive([
